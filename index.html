@@ -326,6 +326,7 @@
     position: relative;
     opacity: 0;
     animation: fadeIn 1.2s ease forwards 0.6s;
+    padding: 2rem;
   }
 
   .hero-image-container {
@@ -333,7 +334,7 @@
     border-radius: 200px 200px 40px 40px;
     overflow: hidden;
     aspect-ratio: 3/4;
-    max-height: 620px;
+    max-height: 550px;
   }
 
   .hero-image-container img {
@@ -345,12 +346,9 @@
 
   .hero-image-accent {
     position: absolute;
-    width: 120%;
-    height: 120%;
+    inset: 0;
     border: 1px solid var(--sage-light);
     border-radius: 200px 200px 40px 40px;
-    top: 20px;
-    left: -10%;
     z-index: -1;
     opacity: 0.5;
   }
