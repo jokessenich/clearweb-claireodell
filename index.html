@@ -3,7 +3,45 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Claire O'Dell — Healing & Therapy</title>
+<title>Claire O'Dell, AMFT — Somatic Therapist in Santa Barbara</title>
+<meta name="description" content="Claire O'Dell, AMFT — a somatic therapist in Santa Barbara offering integrative, body-based therapy for individuals and couples navigating anxiety, grief, chronic pain, and life transitions. In-person & telehealth.">
+
+<!-- Open Graph / social sharing -->
+<meta property="og:type" content="website">
+<meta property="og:title" content="Claire O'Dell, AMFT — Somatic Therapist in Santa Barbara">
+<meta property="og:description" content="Integrative, body-based therapy for individuals and couples in Santa Barbara. In-person & telehealth.">
+<meta property="og:image" content="Claire.png">
+<!-- TODO: once the domain is live, set these to absolute URLs (e.g. https://yourdomain.com/) -->
+<!-- <meta property="og:url" content="https://YOURDOMAIN.com/"> -->
+<!-- <link rel="canonical" href="https://YOURDOMAIN.com/"> -->
+
+<!-- Local business structured data -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "MedicalBusiness",
+  "name": "Claire O'Dell, AMFT",
+  "description": "Somatic therapist in Santa Barbara offering integrative, body-based psychotherapy for individuals and couples.",
+  "image": "Claire.png",
+  "telephone": "+1-805-364-4345",
+  "email": "Claireodell9@gmail.com",
+  "medicalSpecialty": "Psychiatric",
+  "areaServed": {
+    "@type": "City",
+    "name": "Santa Barbara"
+  },
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Santa Barbara",
+    "addressRegion": "CA",
+    "addressCountry": "US"
+  },
+  "availableService": {
+    "@type": "MedicalTherapy",
+    "name": "Somatic Therapy"
+  }
+}
+</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Outfit:wght@300;400;500&display=swap" rel="stylesheet">
@@ -974,6 +1012,24 @@
     margin-top: 0.5rem;
   }
 
+  .contact-form-area .btn-primary:disabled {
+    opacity: 0.6;
+    cursor: default;
+  }
+
+  .form-status {
+    margin-top: 1rem;
+    font-family: var(--sans);
+    font-size: 0.85rem;
+    font-weight: 400;
+    line-height: 1.6;
+    text-align: center;
+    min-height: 1.2em;
+  }
+
+  .form-status.success { color: var(--sage); }
+  .form-status.error { color: var(--clay-dark); }
+
   /* ========== FOOTER ========== */
   footer {
     padding: 3rem;
@@ -1143,9 +1199,9 @@
 
   <div class="hero-content">
     <div class="hero-text">
-      <p class="hero-tagline">Psychotherapy & Counseling</p>
+      <p class="hero-tagline">Somatic Therapy · Santa Barbara</p>
       <h1 class="hero-title">Expanding<br><em>self awareness</em><br>& finding clarity</h1>
-      <p class="hero-description">Individual therapy and couples counseling focused on creating self-compassion through the exploration of our inner landscape.</p>
+      <p class="hero-description">Somatic, body-based therapy for individuals and couples in Santa Barbara — creating self-compassion through the exploration of our inner landscape.</p>
       <div class="hero-buttons">
         <a href="#contact" class="btn-primary">Schedule a Session</a>
         <a href="#approach" class="btn-secondary">Learn More</a>
@@ -1200,9 +1256,11 @@
         <p class="section-label">Specialties</p>
         <h2 class="section-title">Areas of focus</h2>
         <p style="font-family: var(--sans); font-size: 0.95rem; font-weight: 300; line-height: 1.85; color: var(--earth); max-width: 420px;">
-          I work with individuals and couples navigating life's complexities — supporting you through challenging experiences with warmth, insight, and clinical expertise.
+          I work with individuals and couples navigating life's complexities — supporting you through challenging experiences with warmth, insight, and a somatic, body-based approach.
         </p>
         <div class="specialty-tags">
+          <span class="specialty-tag">Somatic Therapy</span>
+          <span class="specialty-tag">Body-Based Healing</span>
           <span class="specialty-tag">Chronic Pain</span>
           <span class="specialty-tag">Depression</span>
           <span class="specialty-tag">Anxiety</span>
@@ -1230,7 +1288,7 @@
     <div class="about-layout">
       <div class="about-image-area reveal">
         <div class="about-image-main">
-          <img src="unsplash-image-qemrlMVwm6k.jpg" alt="Mountain landscape at golden hour" loading="lazy">
+          <img src="unsplash-image-qemrlMVwm6k.jpg" alt="Mountains at golden hour under a full moon" loading="lazy">
         </div>
         <div class="about-image-decor"></div>
       </div>
@@ -1240,7 +1298,7 @@
         <div class="about-body">
           <p>Growing up between Santa Barbara and Ontario, Canada, I developed an appreciation for different perspectives and ways of living early on. I've followed many passions, worked many jobs, and pursued opportunities to travel the world.</p>
           <p>After working as an Activities Director for an Alzheimer's and Dementia Care Community and witnessing the depth of grief, I became curious about the human experience. I left the country in search of meaning and purpose — which eventually led me to pursue my Master's Degree in Clinical Psychology from Antioch University.</p>
-          <p>Today, I have the honor of working in private practice, supporting adults and couples as they explore how their thoughts and emotions are held in the body and impact their lives.</p>
+          <p>Today, I have the honor of working in private practice as a somatic therapist in Santa Barbara, supporting adults and couples as they explore how their thoughts and emotions are held in the body and impact their lives.</p>
         </div>
         <div class="about-credentials">
           <div class="credential">
@@ -1338,26 +1396,28 @@
 
       <div class="contact-form-area reveal" style="transition-delay: 0.15s;">
         <h3>Send a Message</h3>
-        <form onsubmit="event.preventDefault(); alert('Thank you for reaching out! Claire will get back to you soon.');">
+        <form id="contactForm" action="https://formspree.io/f/xlgybnel" method="POST">
           <div class="form-row">
             <div class="form-group">
               <label for="fname">First Name</label>
-              <input type="text" id="fname" placeholder="Jane" required>
+              <input type="text" id="fname" name="First Name" placeholder="Jane" required>
             </div>
             <div class="form-group">
               <label for="lname">Last Name</label>
-              <input type="text" id="lname" placeholder="Doe" required>
+              <input type="text" id="lname" name="Last Name" placeholder="Doe" required>
             </div>
           </div>
           <div class="form-group">
             <label for="email">Email</label>
-            <input type="email" id="email" placeholder="jane@example.com" required>
+            <input type="email" id="email" name="email" placeholder="jane@example.com" required>
           </div>
           <div class="form-group">
             <label for="message">Message</label>
-            <textarea id="message" placeholder="Tell me a little about what brings you here..." required></textarea>
+            <textarea id="message" name="message" placeholder="Tell me a little about what brings you here..." required></textarea>
           </div>
+          <input type="hidden" name="_subject" value="New inquiry from your website">
           <button type="submit" class="btn-primary">Send Message</button>
+          <p id="formStatus" class="form-status" role="status" aria-live="polite"></p>
         </form>
       </div>
     </div>
@@ -1410,6 +1470,47 @@
         target.scrollIntoView({ behavior: 'smooth', block: 'start' });
       }
     });
+  });
+
+  // Formspree form submission (AJAX — keeps visitor on the page)
+  const contactForm = document.getElementById('contactForm');
+  const formStatus = document.getElementById('formStatus');
+  const submitBtn = contactForm.querySelector('button[type="submit"]');
+
+  contactForm.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    submitBtn.disabled = true;
+    submitBtn.textContent = 'Sending…';
+    formStatus.textContent = '';
+    formStatus.className = 'form-status';
+
+    try {
+      const response = await fetch(contactForm.action, {
+        method: 'POST',
+        body: new FormData(contactForm),
+        headers: { 'Accept': 'application/json' }
+      });
+
+      if (response.ok) {
+        contactForm.reset();
+        formStatus.textContent = 'Thank you for reaching out. Claire will get back to you soon.';
+        formStatus.classList.add('success');
+        submitBtn.textContent = 'Message Sent';
+      } else {
+        const data = await response.json().catch(() => ({}));
+        const msg = data.errors ? data.errors.map(err => err.message).join(', ')
+                                : 'Something went wrong. Please email Claireodell9@gmail.com directly.';
+        formStatus.textContent = msg;
+        formStatus.classList.add('error');
+        submitBtn.disabled = false;
+        submitBtn.textContent = 'Send Message';
+      }
+    } catch (err) {
+      formStatus.textContent = 'Connection issue. Please email Claireodell9@gmail.com directly.';
+      formStatus.classList.add('error');
+      submitBtn.disabled = false;
+      submitBtn.textContent = 'Send Message';
+    }
   });
 </script>
 </body>
